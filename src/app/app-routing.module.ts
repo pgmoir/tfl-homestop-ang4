@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard.service';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MytflComponent } from './mytfl/mytfl.component';
@@ -15,8 +16,8 @@ import { NgModule } from '@angular/core';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'tube', component: TubelinesComponent, children: [
-    { path: ':name/:style', component: TubelineDetailComponent },
-    { path: ':name/:style/edit', component: TubelineEditComponent }
+    { path: ':name/:style', canActivate: [AuthGuard], component: TubelineDetailComponent },
+    { path: ':name/:style/edit', canActivate: [AuthGuard], component: TubelineEditComponent }
   ] },
   { path: 'bus', component: BusroutesComponent },
   { path: 'road', component: RoadsComponent },

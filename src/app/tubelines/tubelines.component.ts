@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Tubeline } from './tubeline.model';
+
 @Component({
   selector: 'app-tubelines',
   templateUrl: './tubelines.component.html',
@@ -7,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TubelinesComponent implements OnInit {
 
-  tubelines = [
-    { name: 'Bakerloo' },
-    { name: 'Central' },
-    { name: 'Circle' },
-    { name: 'District' }
+  tubelines: Tubeline[] = [
+    new Tubeline('Bakerloo', 'bakerloo'),
+    new Tubeline('Central', 'central'),
+    new Tubeline('Circle', 'circle'),
+    new Tubeline('District', 'district')
   ];
 
   constructor() { }

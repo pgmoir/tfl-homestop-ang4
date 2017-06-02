@@ -26,3 +26,14 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Additional Notes
+
+* "ng new tfl-homestop-ang4" to create new project
+* "npm install" to install items
+* "npm install --save bootstrap" for bootstrap reference, but also requires reference to styles in .angular-cli.json
+* "ng g c tubelines" to create new tubelines component
+* added simple style for 4 lines, and simple UI to display four lines
+* problem with defining dynamic style on iterator, resolved with [ngClass]="tubeline.name.toLowerCase()" - but changed again
+* initialised for git, added github SSH key, added github repo, and then pushed local
+* need to define basic structure, with header, and routing

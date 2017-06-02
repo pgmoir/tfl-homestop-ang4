@@ -26,7 +26,7 @@ import { MytflService } from './mytfl/mytfl.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'tube', component: TubelinesComponent, children: [
-    { path: ':name', component: TubelineDetailComponent }
+    { path: ':name/:style', component: TubelineDetailComponent }
   ] },
   { path: 'bus', component: BusroutesComponent },
   { path: 'road', component: RoadsComponent },

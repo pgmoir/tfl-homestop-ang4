@@ -1,1 +1,1 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()" [ngClass]="tubeline.style">{{ tubeline.name }}</a>
+<a class="list-group-item clearfix" [ngClass]="tubeline.style" [routerLink]="['/tube', tubeline.name, tubeline.style]">{{ tubeline.name }}</a>

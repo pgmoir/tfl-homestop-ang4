@@ -3,9 +3,11 @@
     <app-tubeline-list></app-tubeline-list>
   </div>
   <div class="col-md-7">
-    <app-tubeline-detail *ngIf="selected; else infoText" [tubeline]="selected"></app-tubeline-detail>
+    <!--<button class="btn btn-primary" (click)="reloadTubelines()">Reload Tubes</button>-->
+    <router-outlet></router-outlet>
+    <!--<app-tubeline-detail *ngIf="selected; else infoText" [tubeline]="selected"></app-tubeline-detail>
     <ng-template #infoText>
       <p>Please select a tubeline!</p>
-    </ng-template>
+    </ng-template>-->
   </div>
 </div>

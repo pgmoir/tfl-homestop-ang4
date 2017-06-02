@@ -1,4 +1,3 @@
-import { TubelineService } from './../../tubeline.service';
 import { Tubeline } from './../../tubeline.model';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -11,13 +10,8 @@ export class TubelineItemComponent implements OnInit {
 
   @Input() tubeline: Tubeline;
 
-  constructor(private tubelineService: TubelineService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  onSelected() {
-    console.log(this.tubeline);
-    this.tubelineService.selected.emit(this.tubeline);
   }
 }

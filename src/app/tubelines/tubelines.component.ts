@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Tubeline } from './tubeline.model';
@@ -13,7 +14,7 @@ export class TubelinesComponent implements OnInit {
 
   selected: Tubeline;
 
-  constructor(private tubelineService: TubelineService) { }
+  constructor(private tubelineService: TubelineService, private router: Router, private route: ActivatedRoute ) { }
 
   ngOnInit() {
     this.tubelineService.selected.subscribe(
@@ -21,6 +22,10 @@ export class TubelinesComponent implements OnInit {
         this.selected = tubeline;
       }
     );
+  }
+
+  reloadTubelines() {
+    //this.router.navigate(['tubelines'], {relativeTo: this.route });
   }
 
 }

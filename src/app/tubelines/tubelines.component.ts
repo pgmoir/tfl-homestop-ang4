@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Tubeline } from './tubeline.model';
+import { TubelineService } from './tubeline.service';
 
 @Component({
   selector: 'app-tubelines',
   templateUrl: './tubelines.component.html',
-  styleUrls: ['./tubelines.component.css']
+  styleUrls: ['./tubelines.component.css'],
+  providers: [TubelineService]
 })
 export class TubelinesComponent implements OnInit {
 
-  tubelines: Tubeline[] = [
-    new Tubeline('Bakerloo', 'bakerloo'),
-    new Tubeline('Central', 'central'),
-    new Tubeline('Circle', 'circle'),
-    new Tubeline('District', 'district')
-  ];
+  selected: Tubeline;
 
-  constructor() { }
+  constructor(private tubelineService: TubelineService) { }
 
   ngOnInit() {
+    this.tubelineService.selected.subscribe(
+      (tubeline: Tubeline) => {
+        this.selected = tubeline;
+      }
+    );
   }
 
 }

@@ -1,7 +1,11 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-4">
-    <div class="list-group">
-      <a class="list-group-item" *ngFor="let tubeline of tubelines" [ngClass]="tubeline.style">{{ tubeline.name }}</a>
-    </div>
+  <div class="col-md-5">
+    <app-tubeline-list></app-tubeline-list>
+  </div>
+  <div class="col-md-7">
+    <app-tubeline-detail *ngIf="selected; else infoText" [tubeline]="selected"></app-tubeline-detail>
+    <ng-template #infoText>
+      <p>Please select a tubeline!</p>
+    </ng-template>
   </div>
 </div>

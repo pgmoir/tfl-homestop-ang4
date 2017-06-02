@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12" [ngClass]="tubeline.style">
+    <h1>{{ tubeline.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div appDropdown class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle">Manage MyTfL <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToFavourites()" style="cursor: pointer">Add Favourite</a></li>
+        <li><a href="#">Edit Favourite</a></li>
+        <li><a href="#">Delete Favourite</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--<div class="row">
+  <div class="col-xs-12">
+    {{ tubeline.style }}
+  </div>
+</div>-->
+<!--<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item"
+        *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
+  </div>
+</div>-->

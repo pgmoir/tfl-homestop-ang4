@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+.bakerloo {
+  color: #ffffff;
+  background: #894e24;
+}
+
+.central {
+  color: #ffffff;
+  background: #dc241f;
+}
+
+.circle {
+  color: #000000;
+  background: #ffce00
+}
+
+.district {
+  color: #ffffff;
+  background: #007229
+}

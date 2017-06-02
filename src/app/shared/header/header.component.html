@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">TfL Homestop</a>
+    </div>
+    <div class="navbar-default">
+      <ul class="nav navbar-nav">
+        <li><a href="#" (click)="onSelect('tubelines')">Tube, Overground, TfL Rail, DLR & Tram</a></li>
+        <li><a href="#" (click)="onSelect('busroutes')">Buses</a></li>
+        <li><a href="#" (click)="onSelect('roads')">Traffic</a></li>
+        <li><a href="#" (click)="onSelect('riverroutes')">River Bus</a></li>
+        <li><a href="#" (click)="onSelect('cablecars')">Emirates Air Line</a></li>
+        <li><a href="#" (click)="onSelect('raillines')">National Rail</a></li>
+        <li><a href="#" (click)="onSelect('mytfl')">My TfL</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" appDropdown>
+          <a href="#" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Save Data</a></li>
+            <li><a href="#">Fetch Data</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

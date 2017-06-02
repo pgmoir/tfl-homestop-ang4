@@ -2,13 +2,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-tubelines *ngIf="loadedFeature === 'tubelines'"></app-tubelines>
-      <app-busroutes *ngIf="loadedFeature === 'busroutes'"></app-busroutes>
-      <app-roads *ngIf="loadedFeature === 'roads'"></app-roads>
-      <app-riverroutes *ngIf="loadedFeature === 'riverroutes'"></app-riverroutes>
-      <app-cablecars *ngIf="loadedFeature === 'cablecars'"></app-cablecars>
-      <app-raillines *ngIf="loadedFeature === 'raillines'"></app-raillines>
-      <app-mytfl *ngIf="loadedFeature === 'mytfl'"></app-mytfl>
-    </div>
+      <router-outlet></router-outlet>
   </div>
 </div>

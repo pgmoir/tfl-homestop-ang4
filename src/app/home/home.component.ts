@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLoadTubelines() {
+  onLoadTubeline(name: string) {
     // complex calculation
     this.router.navigate(['/tube']);
   }

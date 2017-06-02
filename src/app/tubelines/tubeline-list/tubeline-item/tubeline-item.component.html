@@ -1,1 +1,5 @@
-<a class="list-group-item clearfix" [ngClass]="tubeline.style" [routerLink]="['/tube', tubeline.name, tubeline.style]">{{ tubeline.name }}</a>
+<a class="list-group-item clearfix" [ngClass]="tubeline.style"
+  [routerLink]="['/tube', tubeline.name, tubeline.style]"
+  [queryParams]="{allowEdit: '1'}"
+  [fragment]="'loading'"
+  >{{ tubeline.name }}</a>

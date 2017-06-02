@@ -5,10 +5,7 @@ export class MytflService {
 
   favouritesChanged = new EventEmitter<Favourite[]>();
 
-  private favourites: Favourite[] = [
-    new Favourite('Central', 'tube'),
-    new Favourite('Bakerloo', 'tube')
-  ];
+  private favourites: Favourite[] = [];
 
   getFavourites() {
     return this.favourites.slice();

@@ -2,9 +2,11 @@
   <div class="col-xs-10">
     <ul class="list-group">
       <a
+        [routerLink]="['/' + favourite.mode, favourite.name, favourite.style]"
         class="list-group-item"
         style="cursor: pointer"
         *ngFor="let favourite of favourites"
+        [ngClass]="favourite.style"
         >
         {{ favourite.name }} ({{ favourite.mode }})
         </a>

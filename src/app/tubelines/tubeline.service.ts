@@ -26,4 +26,9 @@ export class TubelineService {
   addToFavourites(tubeline: Tubeline) {
     this.mytflService.addFavourite(new Favourite(tubeline.name, 'tube', tubeline.style));
   }
+
+  updateTubeline(name: string, style: string) {
+    // dont do anything
+    console.log(name + ': ' + style);
+  }
 }

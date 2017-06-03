@@ -1,3 +1,4 @@
+import { CanDeactivateGuard } from './tubelines/tubeline-edit/can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +52,7 @@ import { TubelineEditComponent } from './tubelines/tubeline-edit/tubeline-edit.c
     HttpModule,
     AppRoutingModule
   ],
-  providers: [MytflService, AuthService, AuthGuard],
+  providers: [MytflService, AuthService, AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { CanDeactivateGuard } from './tubelines/tubeline-edit/can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'tube', canActivateChild: [AuthGuard], component: TubelinesComponent, children: [
     { path: ':name/:style', component: TubelineDetailComponent },
-    { path: ':name/:style/edit', component: TubelineEditComponent }
+    { path: ':name/:style/edit', component: TubelineEditComponent, canDeactivate: [CanDeactivateGuard] }
   ] },
   { path: 'bus', component: BusroutesComponent },
   { path: 'road', component: RoadsComponent },

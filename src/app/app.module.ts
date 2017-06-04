@@ -26,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 
 import { MytflService } from './mytfl/mytfl.service';
 import { TubelineEditComponent } from './tubelines/tubeline-edit/tubeline-edit.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { TubelineEditComponent } from './tubelines/tubeline-edit/tubeline-edit.c
     MytflComponent,
     HomeComponent,
     NotFoundComponent,
-    TubelineEditComponent
+    TubelineEditComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

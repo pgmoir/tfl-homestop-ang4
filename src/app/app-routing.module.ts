@@ -1,3 +1,4 @@
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { CanDeactivateGuard } from './tubelines/tubeline-edit/can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { Routes, RouterModule } from '@angular/router';
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'cablecar', component: CablecarsComponent },
   { path: 'rail', component: RaillinesComponent },
   { path: 'mytfl', component: MytflComponent },
-  { path: 'not-found', component: NotFoundComponent },
+  { path: 'not-found', component: ErrorPageComponent, data: { message: 'Page not found!' } },
+  // { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];
 

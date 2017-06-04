@@ -1,3 +1,5 @@
+import { TubelineService } from './tubelines/tubeline.service';
+import { TubelineResolver } from './tubelines/tubeline-detail/tubeline-resolver.service';
 import { CanDeactivateGuard } from './tubelines/tubeline-edit/can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
@@ -54,7 +56,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [MytflService, AuthService, AuthGuard, CanDeactivateGuard],
+  providers: [MytflService, AuthService, AuthGuard, CanDeactivateGuard, TubelineService, TubelineResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

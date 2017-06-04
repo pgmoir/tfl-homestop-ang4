@@ -1,4 +1,4 @@
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, Data } from '@angular/router';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -17,21 +17,29 @@ export class TubelineDetailComponent implements OnInit, OnDestroy {
   constructor(private tubelineService: TubelineService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.tubeline = new Tubeline(this.route.snapshot.params['name'], this.route.snapshot.params['style']);
-    // console.log(this.route.snapshot.queryParams);
-    // console.log(this.route.snapshot.fragment);
-    // this.route.queryParams.subscribe();
-    // this.route.fragment.subscribe();
-    this.paramsSubscription = this.route.params
+    // this.tubeline = new Tubeline(this.route.snapshot.params['name'], this.route.snapshot.params['style']);
+    // // console.log(this.route.snapshot.queryParams);
+    // // console.log(this.route.snapshot.fragment);
+    // // this.route.queryParams.subscribe();
+    // // this.route.fragment.subscribe();
+    // this.paramsSubscription = this.route.params
+    //   .subscribe(
+    //     (params: Params) => {
+    //       this.tubeline = new Tubeline(params['name'], params['style']);
+    //     }
+    //   );
+    // console.log('here at tubeline detail');
+    this.route.data
       .subscribe(
-        (params: Params) => {
-          this.tubeline = new Tubeline(params['name'], params['style']);
+        (data: Data) => {
+          console.log(data);
+          this.tubeline = data['tubeline'];
         }
       );
   }
 
   ngOnDestroy() {
-    this.paramsSubscription.unsubscribe();
+    // this.paramsSubscription.unsubscribe();
   }
 
   onAddToFavourites() {

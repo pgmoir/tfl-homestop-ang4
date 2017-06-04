@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorPageComponent implements OnInit {
   errorMessage: string;
-  
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

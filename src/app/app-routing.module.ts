@@ -1,3 +1,4 @@
+import { TubelineResolver } from './tubelines/tubeline-detail/tubeline-resolver.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CanDeactivateGuard } from './tubelines/tubeline-edit/can-deactivate-guard.service';
 import { AuthGuard } from './auth-guard.service';
@@ -18,7 +19,7 @@ import { NgModule } from '@angular/core';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'tube', canActivateChild: [AuthGuard], component: TubelinesComponent, children: [
-    { path: ':name/:style', component: TubelineDetailComponent },
+    { path: ':name/:style', component: TubelineDetailComponent, resolve: {tubeline: TubelineResolver} },
     { path: ':name/:style/edit', component: TubelineEditComponent, canDeactivate: [CanDeactivateGuard] }
   ] },
   { path: 'bus', component: BusroutesComponent },

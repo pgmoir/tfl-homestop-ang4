@@ -7,8 +7,7 @@ import { TubelineService } from './tubeline.service';
 @Component({
   selector: 'app-tubelines',
   templateUrl: './tubelines.component.html',
-  styleUrls: ['./tubelines.component.css'],
-  providers: [TubelineService]
+  styleUrls: ['./tubelines.component.css']
 })
 export class TubelinesComponent implements OnInit {
 

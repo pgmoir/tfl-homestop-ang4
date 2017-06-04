@@ -31,10 +31,7 @@ export class TubelineDetailComponent implements OnInit, OnDestroy {
     // console.log('here at tubeline detail');
     this.route.data
       .subscribe(
-        (data: Data) => {
-          console.log(data);
-          this.tubeline = data['tubeline'];
-        }
+        (data: Data) => this.tubeline = data['tubeline']
       );
   }
 

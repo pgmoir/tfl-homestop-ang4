@@ -47,4 +47,8 @@ export class TubelineDetailComponent implements OnInit, OnDestroy {
     this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'});
   }
 
+  onDeleteFromFavourites() {
+    this.tubelineService.deleteFromFavourites(this.tubeline);
+  }
+
 }

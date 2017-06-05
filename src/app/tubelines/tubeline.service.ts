@@ -47,4 +47,8 @@ export class TubelineService {
       console.log(this.tubelines[i].name + ' ' + this.tubelines[i].style);
     }
   }
+
+  deleteFromFavourites(tubeline: Tubeline) {
+    this.mytflService.deleteFavourite(tubeline.name, 'tube');
+  }
 }

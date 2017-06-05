@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { CanComponentDeactivate } from './can-deactivate-guard.service';
-import { Router, ActivatedRoute, CanDeactivate } from '@angular/router';
+import { Router, ActivatedRoute, CanDeactivate, Params } from '@angular/router';
 import { Tubeline } from './../tubeline.model';
 import { TubelineService } from './../tubeline.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,13 +16,20 @@ export class TubelineEditComponent implements OnInit, CanComponentDeactivate {
   name = '';
   style = '';
   changesSaved = false;
+  editMode = false;
 
   constructor(private tubelineService: TubelineService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.tubeline = new Tubeline('Jubilee', 'jubilee');
-    this.name = this.tubeline.name;
-    this.style = this.tubeline.style;
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.tubeline = this.tubelineService.getTubeline(params['name']);
+          this.name = this.tubeline.name;
+          this.style = this.tubeline.style;
+        }
+      );
+    // this.tubeline = new Tubeline('Jubilee', 'jubilee');
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {

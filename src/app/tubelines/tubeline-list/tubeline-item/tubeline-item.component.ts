@@ -10,8 +10,6 @@ export class TubelineItemComponent implements OnInit {
 
   @Input() tubeline: Tubeline;
 
-  constructor() { }
-
   ngOnInit() {
   }
 }

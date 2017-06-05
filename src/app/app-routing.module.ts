@@ -19,8 +19,8 @@ import { NgModule } from '@angular/core';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'tube', canActivateChild: [AuthGuard], component: TubelinesComponent, children: [
-    { path: ':name/:style', component: TubelineDetailComponent, resolve: {tubeline: TubelineResolver} },
-    { path: ':name/:style/edit', component: TubelineEditComponent, canDeactivate: [CanDeactivateGuard] }
+    { path: ':name', component: TubelineDetailComponent, resolve: {tubeline: TubelineResolver} },
+    { path: ':name/edit', component: TubelineEditComponent, canDeactivate: [CanDeactivateGuard] }
   ] },
   { path: 'bus', component: BusroutesComponent },
   { path: 'road', component: RoadsComponent },

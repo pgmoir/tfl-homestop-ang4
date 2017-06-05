@@ -1,9 +1,9 @@
 import { Favourite } from './../shared/favourites.model';
-import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 export class MytflService {
 
-  favouritesChanged = new EventEmitter<Favourite[]>();
+  favouritesChanged = new Subject<Favourite[]>();
 
   private favourites: Favourite[] = [];
 
@@ -13,12 +13,12 @@ export class MytflService {
 
   addFavourite(favourite: Favourite) {
     this.favourites.push(favourite);
-    this.favouritesChanged.emit(this.favourites.slice());
+    this.favouritesChanged.next(this.favourites.slice());
   }
 
   addFavourites(favourites: Favourite[]) {
     this.favourites.push(...favourites);
-    this.favouritesChanged.emit(this.favourites.slice());
+    this.favouritesChanged.next(this.favourites.slice());
   }
 
   deleteFavourite(name: string, mode: string) {
